@@ -1,0 +1,51 @@
+.all-clear { clear:both; }
+.no-display { display: none; }
+.d-block { display: block; }
+.inline { display: inline; }
+.inBlock { display: inline-block; }
+.table {display: table; }
+.table-cell {display: table-cell; }
+
+.a-left { text-align: left; }
+.a-right { text-align: right; }
+.a-center { text-align: center; }
+.a-justify { text-align: justify; }
+
+.f-left { float: left; }
+.f-right { float: right; }
+.f-none { float: none; }
+
+.bold-600 { font-weight: 600; }
+.underline { text-decoration: underline; }
+
+.noBorder { border: none;}
+.uppercase { text-transform: uppercase;}
+.capital { text-transform: capitalize; }
+
+.p-absolute { position: absolute; }
+.p-relative { position: relative; }
+.p-fixed { position: fixed; }
+.p-static { position: static; }
+
+.w-100 { @include setWidthHeight(100%, null) }
+.w-50 { @include setWidthHeight(50%, null)}
+.w-auto { @include setWidthHeight(auto, null)}
+.fullWidth {width: 100%; min-width: 100%; max-width: 100%; }
+.marg-auto { margin: auto;}
+
+.upper { @extend .uppercase; }
+.no-transform { text-transform: none; }
+.clear-text-transform{ @extend .no-transform; }
+.overflowHide { overflow: hidden; }
+.pointer { cursor: pointer; }
+.p-absolute-full{ position:absolute; top:0; bottom:0; right:0; left:0; margin:auto;}
+.magento-message-link { color:$white; text-decoration: underline; }
+
+.display-mobile { display: block; @include breakpoint(medium) { display: none; } }
+.hide-mobile { display: none; @include breakpoint(medium) { display: block; } }
+
+.brand-prefix {display: inline-block; text-transform: none; }
+
+.v-top {vertical-align: top}
+.v-middle {vertical-align: middle}
+.v-bottom {vertical-align: bottom}

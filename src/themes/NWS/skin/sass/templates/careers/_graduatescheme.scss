@@ -1,0 +1,390 @@
+.headerFit{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: rem-calc(-10px) 0 -25% 0;
+
+  @include breakpoint(medium){
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: rem-calc(-20px) 0 -25% 0;
+  }
+
+  @include breakpoint(large){
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: rem-calc(10px) 0 -25% 0;
+  }
+
+  @include breakpoint(xlarge){
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: rem-calc(-10px) 0 -25% 0;
+  }
+
+}
+
+.gs-body-content {
+  position: initial;
+  display: block;
+
+  width: 100vw;
+  height: 100%;
+
+
+  padding: rem-calc(50 30 0 28);
+
+  @include breakpoint(large) {
+    padding: rem-calc(50) 10% 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  margin: 0 auto 0;
+  box-shadow: 0 0 rem-calc(65 15) rgba(#000, 0.2);
+  @include breakpoint(xxxlarge){
+    box-shadow: 0 0;
+  }
+  overflow: auto;
+  border-radius: rem-calc(3);
+  background: $white;
+
+  .gs-site-main {
+    font-family: $font-primary;
+    text-align: justify;
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    div {
+
+      margin: 0;
+
+    }
+
+    .text-panel {
+      margin: auto;
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 0px;
+      letter-spacing: rem-calc(1);
+      font-size: rem-calc(50);
+      border-bottom: rem-calc(2) solid $black;
+    }
+
+    h2 {
+      font-size: rem-calc(40);
+      text-align: center;
+      margin-bottom: 0;
+      letter-spacing: rem-calc(1);
+    }
+
+    h3 {
+      text-transform: uppercase;
+      color: $osTitles;
+      font-size: rem-calc(24);
+      text-align: center;
+      margin-bottom: rem-calc(30);
+      line-height: rem-calc(29);
+      letter-spacing: 0;
+    }
+
+    a {
+
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: rem-calc(30);
+      text-align: center;
+      font-style: inherit;
+      color: $dark-gray;
+      margin: 0 0 .8rem;
+      font-weight: 400;
+      line-height: 1.2;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    p {
+      width: 100%;
+      height: auto;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: rem-calc(16);
+      text-align: center;
+      font-style: inherit;
+      color: $osText;
+      margin: auto;
+      font-weight: 400;
+      line-height: rem-calc(24);
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .page-img {
+      display: block;
+      text-align: center;
+
+      height: 100%;
+      width: 100%;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+
+
+    .main-list {
+      text-align: center;
+      width: 100%;
+
+      h3 {
+        text-align: center;
+        font-size: rem-calc(24);
+        letter-spacing: 0;
+        color: $osText;
+        text-transform: uppercase;
+        opacity: 1;
+        margin: 0;
+      }
+
+      ul {
+        li {
+
+          img {
+            width: rem-calc(235);
+            height: auto;
+            padding-top: rem-calc(50);
+
+
+          }
+
+          p {
+            padding-top: rem-calc(30);
+            text-align: center;
+            font-size: rem-calc(16);
+            letter-spacing: 0;
+            color: $osText;
+            opacity: 1;
+            width: rem-calc(238);
+          }
+        }
+      }
+    }
+  }
+
+    .page-wrapper {
+      padding-right: rem-calc(15);
+      padding-left: rem-calc(15);
+
+    }
+
+    .top-float-container-gs {
+
+      margin-bottom: rem-calc(50) !important;
+
+      .floatingtext-top-gs {
+        width: 100%;
+        height: auto;
+
+
+        h3 {
+          width: 100%;
+          height: auto;
+          margin-bottom: rem-calc(30);
+          font-size: rem-calc(24);
+          font-weight: normal;
+        }
+
+        p {
+          max-width: 100%;
+          width: 100%;
+          text-align: center;
+          letter-spacing: 0;
+
+        }
+
+
+      }
+    }
+
+      .float-container-gs {
+
+        margin-bottom: rem-calc(50) !important;
+
+        .float-text-gs {
+          width: 100%;
+          height: auto;
+
+
+          h3 {
+            width: 100%;
+            height: auto;
+            margin-bottom: rem-calc(30);
+            font-size: rem-calc(24);
+            font-weight: normal;
+          }
+
+          p {
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0;
+
+          }
+
+          .iconImg{
+            width: rem-calc(235);
+            height: rem-calc(110);
+
+            padding: 0 rem-calc(70 30);
+
+          }
+
+          .iconText{
+
+          }
+
+        }
+
+        .people-text-div {
+          width: 100%;
+          height: auto;
+
+
+          h3 {
+            width: 100%;
+            height: rem-calc(38);
+            margin-bottom: rem-calc(30);
+            font-size: rem-calc(24);
+            font-weight: normal;
+          }
+
+          p {
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 0;
+            padding-bottom: rem-calc(10);
+            font-size: rem-calc(16);
+
+            &:nth-last-child(1){
+              padding-bottom: 0;
+            }
+
+            a {
+              padding-top: rem-calc(30);
+              text-decoration: underline;
+              text-align: center;
+              color: $osLink;
+              font-size: rem-calc(16);
+            }
+          }
+
+
+
+          .iconImg{
+            width: rem-calc(235);
+            height: rem-calc(110);
+
+            padding: 0 rem-calc(70 30);
+
+          }
+        }
+      }
+
+
+
+    .bottom-float-container-gs {
+
+      margin: rem-calc(50 0 0) !important;
+
+      .floatingtext-bottom-gs {
+
+        width: 100%;
+        height: 100%;
+
+
+        h3 {
+          width: 100%;
+          height: rem-calc(38);
+          margin-bottom: rem-calc(30);
+          font-size: rem-calc(24);
+          font-weight: normal;
+        }
+
+        p {
+          max-width: rem-calc(1100);
+          width: 100%;
+          text-align: center;
+          margin: 0 auto 0;
+          letter-spacing: 0;
+          padding-bottom: rem-calc(50);
+        }
+
+        a {
+
+          text-decoration: underline;
+          color: $osLink;
+          font-size: rem-calc(16);
+          font-weight: 400;
+          line-height: rem-calc(24);
+          text-align: center;
+          font-style: inherit;
+        }
+
+
+      }
+
+    }
+
+
+
+  .second-list {
+    width: 100%;
+    h3 {
+      width: 100%;
+      text-align: center;
+      font-size: rem-calc(24);
+      letter-spacing: 0;
+      color: $osTitles;
+      text-transform: uppercase;
+      opacity: 1;
+
+    }
+    ul {
+      li {
+        text-align: left;
+        font-size: rem-calc(16);
+        letter-spacing: 0;
+        color: $osText
+
+      }
+      p {
+        padding-top: rem-calc(30);
+        text-align: left;
+        text-decoration: underline;
+        font-size: rem-calc(16);
+        letter-spacing: 0;
+        color: $osLink;
+      }
+    }
+  }
+
+
+}

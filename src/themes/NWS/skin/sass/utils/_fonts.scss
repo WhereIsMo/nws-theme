@@ -1,0 +1,60 @@
+// Fonts
+// ---
+$font-arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-awesome: FontAwesome;
+
+
+$font-primary: $font-arial;
+$font-secondary: $font-montserrat;
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
+  font-weight: $header-font-weight;
+  font-style: $header-font-style;
+  color: $header-color;
+  text-rendering: $header-text-rendering;
+  margin: rem-calc(0 0 5);
+  line-height: 1.35;
+
+  small {
+    color: $header-small-font-color;
+    line-height: 0;
+  }
+}
+
+h1 {
+  @include cmsTitle();
+}
+h2 {
+  font-size:rem-calc(14);
+  line-height:rem-calc(14);
+  @include breakpoint(medium) {
+    font-size:rem-calc(18);
+    line-height:rem-calc(18);
+  }
+}
+h3 {
+  font-size:rem-calc(12);
+  line-height:rem-calc(12);
+  @include breakpoint(medium) {
+    font-size:rem-calc(16);
+    line-height:rem-calc(16);
+  }
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+
+.small {
+  font-size: 70%;
+  top: rem-calc(4);
+}

@@ -1,0 +1,25 @@
+// Breakpoints
+// ---
+$breakpoints: (
+        small: 0,
+        small-medium: 425px,
+        medium: 768px,
+        medium-large: 1000px,
+        large: 1025px,
+        xlarge: 1200px,
+        xlarger: 1349px,
+        xxlarge: 1440px,
+        xxxlarge: 1920px,
+);
+$breakpoint-classes: (small medium large xlarge xxlarge);
+
+
+$breakpoint-small: 0;
+$breakpoint-small-medium: 425px;
+$breakpoint-medium: 768px;
+$breakpoint-medium-large: 1000px;
+$breakpoint-large: 1025px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xlarger: 1349px;
+$breakpoint-xxlarge: 1440px;
+$breakpoint-xxxlarge: 1920px;

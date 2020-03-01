@@ -1,0 +1,36 @@
+@mixin box-shadow($s1, $s2, $s3, $s4, $color) {
+  -webkit-box-shadow: rem-calc($s1 $s2 $s3 $s4) $color;
+  -moz-box-shadow: rem-calc($s1 $s2 $s3 $s4) $color;
+  box-shadow: rem-calc($s1 $s2 $s3 $s4) $color;
+}
+
+@mixin shadowBasic($colour, $size) {
+  text-shadow: $colour rem-calc($size $size);
+}
+
+@mixin boxShadowBasic($colour, $size) {
+  box-shadow: $colour rem-calc($size $size);
+}
+
+@mixin linear-gradient($from, $to) {
+  background: $to;
+  background: -moz-linear-gradient(top, $from 0%, $to 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+  background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+  background: -o-linear-gradient(top, $from 0%,$to 100%);
+  background: linear-gradient(to bottom, $from 0%,$to 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to})
+}
+
+@mixin border-gradient($from, $to, $width: 3px) {
+  border: $width solid $to;
+  border-image-source: linear-gradient($from, $to);
+  border-width: $width;
+  border-image-slice: 1;
+}
+
+@mixin customBorder($sizes, $color: $black, $style: solid){
+  border-style: $style;
+  border-color: $color;
+  border-width: rem-calc($sizes);
+}

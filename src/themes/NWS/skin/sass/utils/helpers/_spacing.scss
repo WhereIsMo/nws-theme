@@ -1,0 +1,76 @@
+@function checkRemCalc($v){
+  @if $v != 0 {
+    $v: rem-calc($v);
+  }
+
+  @return $v;
+}
+
+@function checkValue($value){
+  @if type-of($value) == 'number'{
+    @return true;
+  }
+  @return false;
+}
+
+@function checkOption($v) {
+  @if checkValue($v) {
+    @return checkRemCalc($v);
+  }@else {
+    @return $v;
+  }
+}
+
+@mixin marg($option: null, $a: null, $b: null, $c: null, $d: null) {
+
+  @if checkValue($option) {
+    $d: $c; $c: $b; $b: $a; $a: $option; $option: 'null';
+  }
+
+  $output: 'margin';
+  $final: '#{checkOption($a)} #{checkOption($b)} #{checkOption($c)} #{checkOption($d)}';
+
+  @if $option != 'null' {
+    $output: 'margin-' + $option;
+    $final: '#{checkOption($a)}'
+  }
+
+  #{$output}: #{$final};
+}
+
+@mixin pad($option: null, $a: null, $b: null, $c: null, $d: null) {
+
+  @if checkValue($option) {
+    $d: $c; $c: $b; $b: $a; $a: $option; $option: 'null';
+  }
+
+  $output: 'padding';
+  $final: '#{checkOption($a)} #{checkOption($b)} #{checkOption($c)} #{checkOption($d)}';
+
+  @if $option != 'null' {
+    $output: 'padding-' + $option;
+    $final: '#{checkOption($a)}'
+  }
+
+  #{$output}: #{$final};
+}
+
+%marg-auto{margin: auto;}
+
+.noPad {padding: 0;};
+
+@for $i from 0 through 10 {
+  %zindex-#{$i} { z-index: $i; }
+}
+
+@mixin borderRadius($a: 4, $b: null, $c: null, $d: null) {
+
+  $output: 'border-radius';
+  $final: '#{checkOption($a)} #{checkOption($a)} #{checkOption($a)} #{checkOption($a)}';
+
+  @if ($b != null) {
+    $final: '#{checkOption($a)} #{checkOption($b)} #{checkOption($c)} #{checkOption($d)}';
+  }
+
+  #{$output}: #{$final};
+}

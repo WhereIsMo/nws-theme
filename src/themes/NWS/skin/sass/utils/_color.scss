@@ -1,0 +1,86 @@
+// Main Colours
+// ---
+
+$green: #3da41d;
+$orange: #f66620;
+$red: #ec5840;
+$pink: #c6bcc7;
+$maroon: #cd5033;
+$yellow: #fff60b;
+
+// Additional Colours
+// ---
+$navBorder: #E2E8ED;
+$navText: #4C5264;
+$white: #fff;
+$osTitles: #373636;
+$osText: #56575A;
+$osHeadImageShade: #263234;
+$osLink: #598FF7;
+$contactBorder: #ADADAD;
+$formSuccess: #7DC246;
+$searchFormText: #1665D8;
+
+// Networld Colours
+// ---
+$blue: #1d59d1;
+$blue-light: #4475d8;
+$blue-dark: #0f44ae;
+$blue-lighter: #b4c7ef;
+$yellow: #fff60b;
+$yellow-light: #feec27;
+$yellow-dark: #ffce08;
+$black: #080e0f;
+$black-menu: #07080a;
+$blue-menu: #002c66;
+$grey-lightest: rgb(250,250,250);
+$grey-lighter: #f6f7f7;
+$grey-light: #cacaca;
+$grey: #ebebeb;
+$grey-dark: #a6a6a6;
+$grey-darker: #7c7a7a;
+$grey-darkest: #313145;
+$feefo-yellow: #ffdd00;
+$turquoise: #00e6fe;
+$color-cybermonday: $turquoise;
+$red-christmas: #8a0602;
+$vermont-yellow: #e5fb2e;
+$vermont-grey: #e7e7e7;
+$vermont-black: #202020;
+$vermont-blue: #161464;
+$green-checkbox: #8CBF1C;
+
+$forza-yellow-standard: $yellow;
+$forza-yellow-hover: #fcff0b;
+
+$forb-green-standard: #138f45;
+$forb-green-hover: #007236;
+
+$vermont-yellow-standard: #e5fb2e;
+$vermont-yellow-hover: #d2e250;
+
+$rapidfire-black: #000;
+$rapidfire-blue: #00e5fc;
+
+
+// Social Media Colours
+// ---
+$twitterblue: #1da1f2;
+$instagrampink: #fb3958;
+$instagramgrey: #6a92b2;
+$facebookblue: #3b5998;
+$youtubered: #cc181e;
+$wordpressblue: #0087be;
+$whatsappgreen: #25d366;
+
+// Buid Palette
+// ---
+$foundation-palette: (
+        primary: $black,
+        secondary: $dark-gray,
+        success: $green,
+        warning: $yellow,
+        alert: $red,
+);
+
+@include add-foundation-colors; // Transfers the colors in the $foundation-palette variable into the legacy color variables, such as $primary-color and $secondary-color

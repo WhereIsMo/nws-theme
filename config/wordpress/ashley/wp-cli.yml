@@ -1,0 +1,28 @@
+# Global parameter defaults
+path: http
+url: http://blog.local.wp
+user: admin
+color: false
+
+# Subcommand defaults (e.g. `wp config create`)
+config create:
+    dbhost: localhost
+    dbname: wordpress-multi
+    dbuser: root
+    dbpass: root
+    extra-php: |
+        define( 'WP_DEBUG', true );
+        define( 'WP_MEMORY_LIMIT', '256M' );
+
+core install:
+    title: Sample Title
+    admin_user: admin
+    admin_password: password
+    admin_email: ashley@networldsports.com
+
+core multisite-install:
+    subdomains: true
+    title: Sample Title
+    admin_user: admin
+    admin_password: password
+    admin_email: ashley@networldsports.com

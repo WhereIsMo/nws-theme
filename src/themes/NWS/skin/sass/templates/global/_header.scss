@@ -1,0 +1,178 @@
+
+
+header{
+  position: relative;
+  width: 100vw;
+  height: auto;
+
+.header {
+  position: relative;
+  background: $blue;
+
+  display: block;
+  top: 0;
+  left: 0;
+  @include setWidthHeight(null, rem-calc(100)) ;
+  width: 100vw;
+  box-shadow: 0 rem-calc(8) rem-calc(6) rem-calc(-6) $dark-gray;
+
+  @include breakpoint (large){
+    background: transparent;
+    height: 0;
+    box-shadow: 0 0 0 0 ;
+
+  }
+
+  .headerIcon {
+
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    line-height: rem-calc(100);
+    width: rem-calc(400);
+
+    text-align: center;
+    color: #FFF;
+    font-size: rem-calc(22);
+    left: 50%;
+    transform: translateX(-50%);
+
+    h1{
+      font-size: 1.5rem;
+      text-align: center;
+      top: 50%;
+    }
+  }
+
+
+
+
+
+  .osMenu {
+
+    z-index: 1000;
+    position: fixed;
+    height: rem-calc(100);
+    width: 100%;
+    background-color: $blue;
+
+
+    @include breakpoint(large) {
+      padding: rem-calc(40 40 0);
+      background-color: transparent;
+      position: absolute;
+    }
+
+    .osLogo{
+      z-index: 13;
+      margin-left: rem-calc(30);
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      i {
+        color: $white;
+      }
+      @include breakpoint(xlarger){
+        width: rem-calc(253);
+
+
+
+      }
+    }
+    .osMenuItems{
+      transition: 0s;
+      padding-top: rem-calc(100);
+
+      @include breakpoint(large){
+        padding-top: rem-calc(40);
+        padding-right: rem-calc(40);
+        position: absolute;
+        right: 0;
+      }
+      ul {
+        transition: 0s;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      li {
+        transition: 0s;
+        border-top: rem-calc(1) solid $navBorder;
+
+        @include breakpoint(large){
+          border-top: 0;
+        padding-left: 0;
+
+        }
+
+        &:nth-last-child(1) {
+
+          border-bottom: rem-calc(1) solid $navBorder;
+
+          @include breakpoint(large){
+            border-bottom: 0;
+
+
+          }
+
+        }
+
+
+        @include breakpoint(large){
+          float: right;
+          padding-right: rem-calc(30);
+
+          &:nth-child(1) {
+
+            padding-right: 0;
+          }
+        }
+      }
+
+
+      li a {
+        display: flex;
+        flex-flow: nowrap;
+
+        width: 100%;
+        height: rem-calc(70);
+        font: $font-primary;
+        font-size: rem-calc(16);
+        color: $navText;
+        padding-top: rem-calc(25);
+        padding-left: rem-calc(20);
+
+        @include breakpoint(large){
+          padding-top: 0;
+          height: rem-calc(20);
+          font-size: rem-calc(14);
+          padding-left: 0;
+        }
+
+
+        @include breakpoint(large){
+          color: $white;
+          border-top: 0;
+          text-align: center;
+        }
+        text-align: left;
+
+        text-decoration: none;
+      }
+
+      li a:hover {
+
+        @include breakpoint(large){
+          padding-bottom: rem-calc(3);
+          border-bottom-width: rem-calc(2);
+          border-bottom-style: solid
+
+        }
+
+      }
+    }
+  }
+}
+}

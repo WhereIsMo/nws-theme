@@ -1,0 +1,11 @@
+// # Sass Helpers
+$image-url: '../../default/images/' !default;
+$font-url: '../fonts/' !default;
+
+@function image-url($image) {
+  @return url('#{$image-url}#{$image}');
+}
+
+@function font-url($font) {
+  @return url('#{$font-url}#{$font}');
+}

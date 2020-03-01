@@ -1,0 +1,15 @@
+{
+  "theme": {
+    "themeName"   : "Net World Sports Theme",
+    "themeURI"    : "test.dev",
+    "author"      : "Net World Sports",
+    "authorURI"   : "https://www.networldsports.co.uk",
+    "description" : "Net World Sports Blog Wordpress Theme",
+    "version"     : "1.0.0",
+    "license"     : "",
+    "licenseURI"  : "",
+    "textDomain"  : "",
+    "tags"        : "",
+    "domainPath"  : ""
+  }
+}

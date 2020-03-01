@@ -1,0 +1,232 @@
+
+body {
+  display: none;
+  line-height: 1.4;
+  background: $white;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.body-content {
+
+  position: initial;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  padding: rem-calc(50 20 100);
+  margin: 0;
+  box-shadow: 0 0 65px 15px rgba(#000, 0.2);
+  overflow: auto;
+  border-radius: 3px;
+  background: #F1F1F1;
+
+  .site-main {
+    font-family: $font-primary;
+    text-align: justify;
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 0px;
+      letter-spacing: rem-calc(1);
+      font-size: rem-calc(50);
+      border-bottom: rem-calc(2) solid $black;
+    }
+
+    h2 {
+      font-size: rem-calc(40);
+      text-align: center;
+      margin-bottom: 0;
+      letter-spacing: rem-calc(1);
+    }
+
+    h3 {
+      font-size: rem-calc(10);
+      text-align: left;
+      margin-bottom: 0;
+      letter-spacing: rem-calc(1);
+    }
+
+    a {
+
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: rem-calc(30);
+      text-align: center;
+      font-style: inherit;
+      color: $dark-gray;
+      margin: 0 0 .8rem;
+      font-weight: 400;
+      line-height: 1.2;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    p {
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: rem-calc(20);
+      text-align: center;
+      font-style: inherit;
+      color: $dark-gray;
+      margin: 0 rem-calc(50) .8rem;
+      font-weight: 400;
+      line-height: 1.2;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    img {
+      width: 70%;
+      position: relative;
+      display: block;
+      margin: rem-calc(20) auto rem-calc(20);
+
+      &:nth-of-type(2) {
+        margin: rem-calc(75) auto;
+      }
+    }
+  }
+  .page-wrapper {
+    padding-right: rem-calc(15);
+    padding-left: rem-calc(15);
+
+  }
+  .search-title {
+
+
+
+    @include breakpoint(medium){
+      text-align: center;
+    };
+
+    h1, h2, h3, h4, h5, h6 {
+      padding-top: 0;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      font-size: rem-calc(28);
+      text-align: center;
+      font-style: inherit;
+      color: $blue;
+      margin: 0 0 .8rem;
+      font-weight: 400;
+      line-height: 1.3rem;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+
+      @include breakpoint(large){
+        padding-top: 0;
+      }
+
+    }
+
+
+
+  }
+
+  .search-content {
+
+    position: relative;
+    padding-top: 5%;
+
+    @include breakpoint(small-medium){
+      padding-top: 0;
+    }
+  }
+
+  .search-content li {
+
+    cursor: pointer;
+    padding: rem-calc(18 18);
+    margin-bottom: rem-calc(5);
+    border: 3px solid $dark-gray ;
+    list-style-type: none;
+    text-align: center;
+
+
+  }
+
+  .search-content li a {
+
+    color: $dark-gray;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: larger;
+    font-weight: bolder;
+
+  }
+
+
+  .search-content li a:hover {
+    color: $blue;
+  }
+
+  .alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: rem-calc(1) solid;
+    border-radius: .25rem;
+    text-align: center;
+    color: $blue;
+    background-color: $blue-lighter;
+    border-color: $blue-light;
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: inherit;
+      line-height: 1.2;
+      text-rendering: optimizeLegibility;
+    }
+
+  }
+}
+
+
+.content-container {
+  background-color: $grey;
+  position: relative;
+  height: 100vh;
+  z-index: 0;
+  padding: 0 25% 0;
+  max-width: 100%;
+  margin: 0 auto;
+
+  scroll-padding-right: -100%;
+  transition: all 300ms ease-in-out;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.site-title {
+  text-align: center;
+  border-bottom: rem-calc(1) solid #111111;
+  margin-bottom: rem-calc(24);
+}
+
+.site-title h1 {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: rem-calc(10);
+}
+
+img {
+  width: 100%;
+}
+
+.content p {
+  line-height: 1.6em;
+  margin-bottom: rem-calc(24);
+}
+
+

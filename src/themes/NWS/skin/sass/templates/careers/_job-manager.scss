@@ -1,0 +1,361 @@
+.job_listings {
+  ul {
+    margin-bottom: rem-calc(50);
+  }
+  .job_listing {
+    border-top: rem-calc(1) solid $black;
+
+    .date{
+    display: none;
+
+    }
+    .position{
+      height: auto;
+      text-align: center;
+      .top_data {
+        display: flex;
+        justify-content: space-evenly;
+        h3 {
+          text-transform: none;
+          color: $osTitles;
+          text-align: left;
+          font-weight: bold;
+          font-size: rem-calc(16);
+          padding-bottom: 0;
+          margin: 0;
+        }
+
+        p {
+          font-size: rem-calc(14);
+          text-align: right;
+          color: $black;
+          opacity: 0.5;
+          text-transform: uppercase;
+          padding: 0;
+          margin: 0;
+
+        }
+      }
+
+    }
+    li{
+      margin-bottom: 50px;
+    }
+    .description {
+      height: 0;
+      overflow:hidden;
+      padding-top: rem-calc(50);
+      p {
+
+        text-align: left;
+        padding-top: rem-calc(13);
+
+      }
+
+
+    }
+    .submit-button{
+      display: none;
+    }
+
+    &.active {
+      .position{
+        text-align: center;
+        h3{
+          border-bottom: 0;
+        }
+      }
+      .description {
+        height: auto;
+
+        p {
+
+          height: auto;
+          overflow:scroll;
+          margin: 0;
+          text-align: left;
+          color: $osText;
+          padding-bottom: 0;
+        }
+
+
+      }
+
+        .submit-button {
+          display: block;
+          background: $formSuccess;
+          min-width: 150px;
+          width: 100%;
+          height: rem-calc(45);
+          border: 0;
+          border-radius: rem-calc(5);
+          padding: 10px;
+          box-shadow: 0 0 rem-calc(3) rgba(0, 0, 0, 0.4);
+          font-size: rem-calc(16);
+          color: $white;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all .5s;
+        }
+    }
+  }
+
+}
+
+
+
+
+
+.floatTop {
+
+  label {
+
+
+    color: $black !important;
+    transform: translateY(0) !important;
+  }
+}
+
+
+#app {
+
+
+  display: block;
+  top: 0 !important;
+  width: 100vw;
+  height: auto;
+  max-width: rem-calc(645);
+  background-color: $white;
+
+  @include breakpoint(small-medium) {
+    width: 100vw;
+  }
+  @include breakpoint(large) {
+    padding-top: 5%;
+    height: auto;
+  }
+}
+.text-area {
+  padding: rem-calc(100 20 30);
+  @include breakpoint(small-medium) {
+
+    padding: rem-calc(70 20 0);
+  }
+
+  @include breakpoint(large) {
+    width: rem-calc(445);
+    padding: 0;
+  }
+  height: auto;
+
+  h3{
+
+    font: $font-primary;
+    font-size: rem-calc(24);
+    text-transform: uppercase;
+    color: $black;
+    text-align: left;
+
+  }
+
+  p{
+    font: $font-primary;
+    font-size: rem-calc(14);
+    text-align: left;
+
+
+  }
+}
+
+
+*{margin:0;padding:0;box-sizing:border-box;}
+form.wpcf7-form
+{
+  width:100%;
+
+  background: $white;
+  text-align:center;
+
+
+}
+
+
+form.wpcf7-form .appfield {
+
+  background: transparent;
+
+  #jobTitle {
+    display: none;
+  }
+  #jobUrl {
+    display: none;
+  }
+  label {
+    padding-left: rem-calc(10);
+    z-index: 1;
+    color: $grey-dark;
+    text-align: left;
+    transform: translateY(rem-calc(30));
+
+
+  }
+
+
+
+
+  span{
+    background: transparent;
+  }
+
+  input.wpcf7-text,
+  textarea.wpcf7-textarea {
+    z-index: 0;
+    display: block;
+    width: 100%;
+    border-width: 0 0 rem-calc(1) 0;
+    padding: rem-calc(10);
+    background: rgba(255, 255, 255, 0.01);
+    font-size: rem-calc(16);
+    color: $black;
+    transition: all 0.5s;
+    box-shadow: none;
+    margin-bottom: rem-calc(30);
+
+
+  }
+
+  input.wpcf7-number,
+  textarea.wpcf7-textarea {
+    display: block;
+    width: 100%;
+    border-width: 0 0 rem-calc(1) 0;
+    padding: rem-calc(10);
+    background: rgba(255, 255, 255, 0.01);
+    font-size: rem-calc(16);
+    color: $black;
+    transition: all 0.5s;
+    box-shadow: none;
+    margin-bottom: rem-calc(30);
+  }
+
+  h1 {
+    margin-bottom: rem-calc(25);
+    color: $black;
+  }
+
+  input:not(:focus):hover,
+  textarea:not(:focus):hover {
+    cursor: pointer;
+  }
+
+  input:focus,
+  textarea:focus {
+
+
+    padding: rem-calc(15);
+
+
+  }
+
+  textarea.wpcf7-textarea {
+    height: rem-calc(200);
+  }
+
+
+}
+form.wpcf7-form {
+
+  #theUploadField #fileuploadfield {
+    display: none;
+  }
+
+  #theUploadField #uploadtextfield {
+    height: 18px;
+    width: 139px;
+  }
+
+  #theUploadField #uploadbrowsebutton {
+    height: auto;
+    width: rem-calc(100);
+
+    text-align: center;
+   border: 0;
+    text-decoration: underline;
+    padding: 0;
+    background: none;
+  }
+}
+
+form.wpcf7-form input.wpcf7-submit
+{
+  background: $blue;
+  min-width:150px;
+  width: inherit;
+  height: rem-calc(45);
+  border:0;
+  border-radius: rem-calc(5);
+  padding:10px;
+  box-shadow:0 0 rem-calc(3) rgba(0,0,0,0.4);
+  font-size: rem-calc(16);
+  color: $white;
+  text-transform: uppercase;
+  cursor:pointer;
+  transition:all .5s;
+}
+form.wpcf7-form input.wpcf7-submit:hover
+{
+  margin-top:-2px;
+  margin-bottom:2px;
+
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+  background: $blue;
+}
+
+#applySuccess {
+
+  display: block;
+  top: rem-calc(152) !important;
+  width: rem-calc(366);
+  height: rem-calc(366);
+  background-color: $formSuccess;
+  color: $white;
+  padding-top: rem-calc(25);
+  border: 0;
+
+  #modalTitle {
+    font-size: rem-calc(25);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: rem-calc(10);
+  }
+
+  .lead {
+    width: rem-calc(228);
+    font-size: rem-calc(16);
+    text-align: center;
+    margin: 0 auto 0;
+
+  }
+
+  .successTick{
+    top: rem-calc(300);
+    width: rem-calc(190);
+    height: rem-calc(190);
+    margin: rem-calc(20) auto 0;
+    background: transparent url("/wp-content/themes/NWS/assets/media/tick-inside-a-circle/tick-inside-a-circle@2x.png") 0% 0% no-repeat padding-box;
+    background-size: cover;
+  }
+
+  .close-button {
+    padding-right: rem-calc(15);
+    top: rem-calc(15);
+    padding-top: 0;
+    span{
+      background: transparent;
+      color: $white;
+      font-size: rem-calc(20);
+      border: 0;
+
+    }
+  }
+}

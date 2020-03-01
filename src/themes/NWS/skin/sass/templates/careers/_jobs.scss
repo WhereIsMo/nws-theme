@@ -1,0 +1,425 @@
+.labelFloat {
+
+  label {
+
+
+    color: $searchFormText !important;
+    transform: translateY(0) !important;
+  }
+}
+
+.headerFit{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: rem-calc(-10px) 0 -25% 0;
+
+  @include breakpoint(medium){
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: rem-calc(-20px) 0 -25% 0;
+  }
+
+  @include breakpoint(large){
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: rem-calc(10px) 0 -25% 0;
+  }
+
+  @include breakpoint(xlarge){
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: rem-calc(-10px) 0 -25% 0;
+  }
+
+}
+
+.main-list {
+  padding: rem-calc(50 0 50 0);
+  text-align: center;
+  width: 100%;
+
+  h4 {
+    padding-top: rem-calc(30);
+    text-align: center;
+    font-size: rem-calc(16);
+    letter-spacing: 0;
+    color: $osText;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 0;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: rem-calc(24);
+    letter-spacing: 0;
+    color: $osText;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 0;
+  }
+
+
+    li {
+
+      img {
+        width: rem-calc(235);
+        height: auto;
+        padding-top: rem-calc(50);
+
+
+      }
+
+      p {
+        padding-top: rem-calc(30);
+        text-align: center;
+        font-size: rem-calc(16);
+        letter-spacing: 0;
+        color: $osText;
+        opacity: 1;
+        width: rem-calc(238);
+      }
+    }
+
+
+
+  .flex-container-benefits {
+
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+
+    justify-content: space-around;
+
+    @include breakpoint(large) {
+
+      flex-direction: row;
+    }
+  }
+
+  .flex-item {
+    padding: rem-calc(5);
+    width: auto;
+    height: auto;
+    /* margin-top: 10px;*/
+    margin: rem-calc(6);
+
+    @include breakpoint(large) {
+
+      width: 15%;
+    }
+
+    flex-grow:1;
+
+  }
+
+  .flex-container2-benefits {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+
+    justify-content: space-around;
+
+    @include breakpoint(large) {
+
+      flex-direction: row;
+    }
+  }
+
+  .flex-item2 {
+    padding: rem-calc(5);
+    width: auto;
+    height: auto;
+    /* margin-top: 10px;*/
+    margin: rem-calc(6);
+
+    @include breakpoint(large) {
+
+      width: 15%;
+    }
+
+    flex-grow:2;
+  }
+
+  .flex-container3-benefits {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+
+    justify-content: space-around;
+
+    @include breakpoint(large) {
+
+      flex-direction: row;
+    }
+  }
+
+  .flex-item3 {
+    padding: rem-calc(5);
+    width: auto;
+    height: auto;
+    /* margin-top: 10px;*/
+    margin: rem-calc(6);
+
+    @include breakpoint(large) {
+
+      width: 15%;
+    }
+
+    flex-grow:3;
+
+
+  }
+}
+
+.jobSearch {
+
+  width: 100%;
+  height: auto;
+  h3 {
+    text-align: center;
+    color: $black;
+    font-size: rem-calc(30);
+    text-transform: uppercase;
+    padding-bottom: rem-calc(30);
+    border-bottom: 0;
+  }
+  p {
+  text-align: center;
+    color: $osText;
+    font-size: rem-calc(16);
+    padding-bottom: rem-calc(50);
+  }
+  .job_listings{
+    list-style-type: none;
+    .job_filters {
+      padding: 1rem;
+      background: 0;
+      .search_jobs {
+        padding: 0;
+        .search_keywords {
+          padding: 0;
+          width: 100%;
+          label {
+            display: block;
+            padding-left: rem-calc(10);
+            z-index: 1;
+            color: $grey-dark;
+            text-align: left;
+            transform: translateY(rem-calc(30));
+
+          }
+          input {
+            z-index: 0;
+            display: block;
+            width: 100%;
+            border-width: 0 0 rem-calc(1) 0;
+            padding: rem-calc(10);
+            background: rgba(255, 255, 255, 0.01);
+            font-size: rem-calc(16);
+            color: $black;
+            transition: all 0.5s;
+            box-shadow: none;
+            margin-bottom: rem-calc(30);
+
+
+          }
+          input:not(:focus):hover {
+            cursor: pointer;
+          }
+          input:focus {
+
+
+            padding: rem-calc(15);
+
+
+          }
+        }
+        .search_location {
+          display: none;
+        }
+        .search_submit{
+          text-align: center;
+          padding-bottom: rem-calc(50);
+          input {
+            background: $formSuccess;
+            min-width:150px;
+            width: 100%;
+            height: rem-calc(45);
+            border:0;
+            border-radius: rem-calc(5);
+            padding:10px;
+            box-shadow:0 0 rem-calc(3) rgba(0,0,0,0.4);
+            font-size: rem-calc(16);
+            color: $white;
+            text-transform: uppercase;
+            cursor:pointer;
+            transition:all .5s;
+          }
+        }
+
+        .showing_jobs {
+          background: 0;
+          padding: rem-calc(10) 0 rem-calc(30);
+          border: 0;
+
+          a{
+            display: none;
+          }
+        }
+      }
+
+      .job_types_select {
+        border: 0;
+        border-bottom: rem-calc(1)  solid  #cacaca;
+      }
+    }
+  }
+}
+
+.bottom-float-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: rem-calc(50);
+  align-items: center !important;
+
+  @include breakpoint(medium){
+    flex-direction: row;
+  }
+  .panel-grid-cell{
+    width: 100% !important;
+  }
+
+  .bottom-float-image-text {
+    background-size: 100% 100%;
+    height: 100%;
+    width: calc(100% + 60px);
+    position: relative;
+    overflow: visible;
+    margin-left: rem-calc(-30) !important;
+
+    @include breakpoint(medium) {
+      width: 100%;
+      margin: 0;
+    }
+
+
+
+
+    .so-widget-sow-editor-base {
+      background: transparent linear-gradient(180deg, #1D59D178 0%, #1665D8 100%) 0% 0% no-repeat padding-box;
+
+      h3 {
+        text-align: center;
+        font-size: 32px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        opacity: 1;
+        padding: 50% rem-calc( 35 0 35);
+      }
+
+      p {
+        text-align: center;
+        font-size: 16px;
+        color: #FFFFFF;
+        opacity: 1;
+        padding: rem-calc(0 35) 50% rem-calc(35);
+      }
+
+    }
+  }
+
+  .bottom-float-form {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .so-widget-sow-editor-base {
+
+      width: 100%;
+      max-width: rem-calc(450);
+
+    }
+
+    #contact {
+
+
+      display: block;
+      top: 0 !important;
+      width: 100%;
+      padding: 0;
+      height: auto;
+      max-width: 100%;
+      background-color: $white;
+
+      @include breakpoint(small-medium) {
+        width: 100%;
+      }
+      @include breakpoint(large) {
+        padding-top: 5%;
+        height: auto;
+      }
+    }
+    .text-area {
+      @include breakpoint(small-medium) {
+
+      }
+
+      @include breakpoint(large) {
+        width: rem-calc(445);
+        padding: 0;
+      }
+      height: auto;
+      h3{
+        font: $font-primary;
+        font-size: rem-calc(24);
+        text-transform: uppercase;
+        color: $black;
+        text-align: left;
+        margin: 0;
+
+      }
+
+      p{
+        font: $font-primary;
+        font-size: rem-calc(14);
+        text-align: left;
+        color: #9EA0A5;
+
+      }
+    }
+
+  }
+}
+
+

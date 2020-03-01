@@ -1,0 +1,294 @@
+@function checkValue($value){
+  @if type-of($value) == 'number'{
+    @return true;
+  }
+  @return false;
+}
+
+@function checkUnit($input, $symbol) {
+  @if unit($input) == $symbol {
+    @return $input;
+  } @else {
+    @return rem-calc($input);
+  }
+}
+
+@function setWidth($width){
+  @if $width != null {
+    @if checkValue($width) {
+      @return checkUnit($width, '%');
+    }@else{
+      @return $width;
+    }
+  }
+  @return null;
+}
+
+@function setHeight($width, $height){
+  @if $height != null {
+    @if checkValue($height) {
+      @if $height < 0 {
+        @return setWidth($width);
+      } @else {
+        @return checkUnit($height, '%');
+      }
+    }@else{
+      @return $height;
+    }
+  }
+  @return null;
+}
+
+@mixin setWidthHeight($width, $height: -1){
+  width: setWidth($width);
+  height: setHeight($width, $height);
+}
+
+@mixin categoryBoxes($categoryWidth, $categoryHeight, $categoryMargin) {
+  height: rem-calc(25);
+  width: 100%;
+  margin: rem-calc(10px 2%);
+
+  @include breakpoint(medium) {
+    height: rem-calc($categoryHeight);
+    width: ($categoryWidth)-0.5%;
+    margin: $categoryMargin;
+    background: center/cover no-repeat;
+  }
+
+  @include breakpoint(large) {
+    height: rem-calc($categoryHeight);
+    width: $categoryWidth;
+    margin: $categoryMargin;
+    background: center/cover no-repeat;
+  }
+}
+
+@mixin after($icon, $color: $black, $size: 20, $font-family: $default-fort-awesome) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: rem-calc($size);
+  font-family: $font-family;
+  margin-right: rem-calc(10);
+  pointer-events: none;
+  content: $icon;
+  color: $color;
+}
+
+@mixin before($icon, $color: $black, $size: 20, $font-family: $default-fort-awesome) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: rem-calc($size);
+  font-family: $font-family;
+  margin-right: rem-calc(10);
+  pointer-events: none;
+  content: $icon;
+  color: $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: rem-calc($radius);
+  -moz-border-radius: rem-calc($radius);
+  -ms-border-radius: rem-calc($radius);
+  border-radius: rem-calc($radius);
+}
+
+@mixin transform($transform, $value: 0) {
+  $output: '';
+  @if $transform != 'none' { $output: #{$transform}#{'('}$value#{')'};}
+  @else { $output: #{$transform}; }
+  -ms-transform: $output;
+  -webkit-transform: $output;
+  transform: $output;
+}
+
+@mixin transitions($time, $option: all) {
+  -webkit-transition: $option $time+s ease-in-out;
+  -moz-transition: $option $time+s ease-in-out;
+  -ms-transition: $option $time+s ease-in-out;
+  -o-transition: $option $time+s ease-in-out;
+  transition: $option $time+s ease-in-out;
+}
+
+
+@mixin transition-delay($time) {
+  -webkit-transition-delay: $time+s;
+  -moz-transition-delay: $time+s;
+  -ms-transition-delay: $time+s;
+  -o-transition-delay: $time+s;
+  transition-delay: $time+s;
+}
+
+@mixin box-sizing($value){
+  -webkit-box-sizing: $value;
+  box-sizing: $value;
+}
+
+@mixin background($imgpath, $position: 0 0, $repeat: no-repeat, $size: 100%, $color: transparent) {
+  background: {
+    image: image-url($imgpath);
+    position: $position;
+    repeat: $repeat;
+    color: $color;
+    size: $size;
+  }
+}
+
+@mixin setColor($background, $color: null) {
+  @if $background != null { background: $background; }
+  @if $color != null { color: $color; }
+}
+
+@function getImage($image, $from) {
+
+  $url: null;
+
+  @if $from == "media" {
+    $url: "https://www.networld-sports.co.uk/media/";
+  } @else if $from == "images" {
+    $url: "https://www.networld-sports.co.uk/skin/frontend/default/networld/images/";
+  } @else if $from == "blog" {
+    $url: "https://www.networld-sports.co.uk/blog/wp-content/uploads/";
+  }
+
+  @return $url+$image;
+}
+
+@mixin addImage ($image, $options) {
+  background: url($image) + $options;
+}
+
+@mixin setPlaceholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  /* Chrome/Opera/Safari */
+  &::-moz-placeholder {
+    color: $color;
+  }
+  /* Firefox 19+ */
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  /* IE 10+ */
+  &:-moz-placeholder {
+    color: $color;
+  }
+  /* Firefox 18- */
+}
+
+@mixin overlay($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+
+@mixin center-vertical ($child: ".center-v") {
+  display: table;
+  & > #{$child} {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@mixin line-cut($width: 50, $deg: -6deg, $color: black, $top: 20, $left: 0, $border: 1){
+  position: absolute;
+  width: rem-calc($width);
+  border-bottom: rem-calc($border) solid $color;
+  left: rem-calc($left);
+  top: rem-calc($top);
+  -ms-transform: rotate($deg); /* IE 9 */
+  -webkit-transform: rotate($deg); /* Chrome, Safari, Opera */
+  transform: rotate($deg);
+}
+
+@function checkMaxSize($size){
+  $output: null;
+
+  @if $size != null {
+    @if checkValue($size) and $size != 0 {
+      $output: checkUnit($size, '%');
+    }@else{
+      $output: $size;
+    }
+  }
+
+  @return $output;
+}
+@mixin setMaxHeight($size){
+  max-height: checkMaxSize($size);
+}
+@mixin setMaxWidth($size){
+  max-width: checkMaxSize($size);
+}
+@mixin setMaxWidthHeight($width, $height){
+  max-width: checkMaxSize($width);
+  max-height: checkMaxSize($height);
+}
+
+@mixin setEdges($top, $right: null, $bottom: null, $left: null){
+  $values: (
+          top: $top,
+          right: $right,
+          bottom: $bottom,
+          left: $left);
+
+  @each $k, $v in $values{
+    $output: '';
+    @if $v != null{
+      @if checkValue($v) and $v != 0{
+        $output: checkUnit($v, '%');
+      }@else{
+        $output: $v;
+      }
+
+      #{$k}: $output;
+    }
+  }
+}
+
+@mixin youtube-embed {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+  width: 100%;
+
+  iframe, object, embed {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+  }
+}
+
+@mixin IE {
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin flex($direction: null, $wrap: null, $content: null, $align-items: null){
+  display: flex;
+  @if $direction != null { flex-direction: $direction; }
+  @if $wrap != null { flex-wrap: $wrap; }
+  @if $content != null { justify-content: $content; }
+  @if $align-items !=null { align-items: $align-items; }
+}
+
+@mixin dark-overlay{
+  &:after{
+    content: "";
+    width: auto;
+    height: rem-calc(480);
+    max-height: rem-calc(480);
+    position: absolute;
+    z-index: 1;  // Take note of this negative z-index and compare to each article's positive z-index. This helps your content to show up over the overlay.
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
