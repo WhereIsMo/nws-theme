@@ -189,7 +189,7 @@ class Cron_Event_Command extends WP_CLI_Command {
 		}
 
 		if ( false !== $event ) {
-			WP_CLI::success( sprintf( "Scheduled event with hook '%s' for %s GMT.", $hook, date( self::$time_format, $timestamp ) ) );
+			WP_CLI::success( sprintf( "Scheduled event with hook '%s' for %s GMT.", $hook, date( self::$time_format, $timestamp ) ) ); //phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 		} else {
 			WP_CLI::error( 'Event not scheduled.' );
 		}
@@ -267,6 +267,53 @@ class Cron_Event_Command extends WP_CLI_Command {
 
 		$message = ( 1 === $executed ) ? 'Executed a total of %d cron event.' : 'Executed a total of %d cron events.';
 		WP_CLI::success( sprintf( $message, $executed ) );
+	}
+
+	/**
+	 * Unschedules all cron events for a given hook.
+	 *
+	 * ## OPTIONS
+	 *
+	 * <hook>
+	 * : Name of the hook for which all events should be unscheduled.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     # Unschedule a cron event on given hook.
+	 *     $ wp cron event unschedule cron_test
+	 *     Success: Unscheduled 2 events with hook 'cron_test'.
+	 */
+	public function unschedule( $args, $assoc_args ) {
+
+		list( $hook ) = $args;
+
+		if ( Utils\wp_version_compare( '4.9.0', '<' ) ) {
+			WP_CLI::error( 'Unscheduling events is only supported from WordPress 4.9.0 onwards.' );
+		}
+
+		$unscheduled = wp_unschedule_hook( $hook );
+
+		if ( empty( $unscheduled ) ) {
+			$message = 'Failed to unschedule events for hook \'%1\$s.';
+
+			// If 0 event found on hook.
+			if ( 0 === $unscheduled ) {
+				$message = "No events found for hook '%1\$s'.";
+			}
+
+			WP_CLI::error( sprintf( $message, $hook ) );
+
+		} else {
+			WP_CLI::success(
+				sprintf(
+					'Unscheduled %1$d %2$s for hook \'%3$s\'.',
+					$unscheduled,
+					Utils\pluralize( 'event', $unscheduled ),
+					$hook
+				)
+			);
+		}
+
 	}
 
 	/**
@@ -365,8 +412,8 @@ class Cron_Event_Command extends WP_CLI_Command {
 	 */
 	protected static function format_event( stdClass $event ) {
 
-		$event->next_run          = get_date_from_gmt( date( 'Y-m-d H:i:s', $event->time ), self::$time_format );
-		$event->next_run_gmt      = date( self::$time_format, $event->time );
+		$event->next_run          = get_date_from_gmt( date( 'Y-m-d H:i:s', $event->time ), self::$time_format ); //phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
+		$event->next_run_gmt      = date( self::$time_format, $event->time ); //phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 		$event->next_run_relative = self::interval( $event->time - time() );
 		$event->recurrence        = ( $event->schedule ) ? self::interval( $event->interval ) : 'Non-repeating';
 

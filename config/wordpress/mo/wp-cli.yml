@@ -1,13 +1,13 @@
 # Global parameter defaults
 path: http
-url: http://blog.nws.co.uk
+url: http://site.mo.co.uk
 user: admin
 color: false
 
 # Subcommand defaults (e.g. `wp config create`)
 config create:
     dbhost: localhost
-    dbname: wordpress-nws-2019
+    dbname: wordpress-mo-2020
     dbuser: root
     dbpass: root
     extra-php: |
@@ -15,7 +15,7 @@ config create:
         define( 'WP_MEMORY_LIMIT', '256M' );
 
 core install:
-    title: Blog | Net World Sports
+    title: Flex Site | Mo's Example
     admin_user: admin
     admin_password: password
     admin_email: admin@example.com
